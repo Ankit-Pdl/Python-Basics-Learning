@@ -96,10 +96,81 @@
 # print(count)  
  
 
-num = 343754343433
-count = 0
+# num = 343754343433
+# count = 0
 
-while num!=0:
-  num = num //10
-  count+=1
-print(count)  
+# while num!=0:
+#   num = num //10
+#   count+=1
+# print(count)  
+
+# n = int(input("num: "))
+# result  = 1
+# while n>1:
+#   result = result * n
+#   n = n-1
+  
+# print(result)  
+
+
+# def factorial(n:int)-> int:
+#   """Return fact of a non negative number: """
+#   if n<0:
+#     raise ValueError("Facotrial is not defined for negative numbers: ")
+#   result  =1
+#   for i in range(1,n+1):
+#     result *= i
+
+#   return result
+
+# if __name__ =="__main__":
+#   num = int(input("Enter a nunber:"))
+#   print("factorial",factorial(num))  
+
+
+# for i in range(1,6):
+#   for j in range(1,i+1):
+#     print("*",end="")
+#   print()  
+
+# for i in range(1,6):
+#   for j in range(1,i+1):
+#     print(j,end="")
+#   print()
+
+# hard level
+# import math
+
+# n = int(input("enter a number: "))
+
+# if n<=1:
+#   print(f'{n} is neither prime nor composite')
+# else:
+#   is_Prime =True
+#   for i in range(2,int(math.sqrt(n))+1):
+#     if n%i ==0:
+#       is_Prime=False
+#       break
+#   print(f"{n} is a prime number " if is_Prime else f"{n} is a composite number" )  
+
+# import math
+# n = int(input("enter a number: "))
+# if n<=1:
+#   print(f'{n} is neither')
+# else:
+#   is_Prime = True
+#   for i in range(2,int(math.sqrt(n))+1):
+#    if n% i ==0:  
+#      is_Prime= False
+#      break
+#   print(f'{n} is a prime number' if is_Prime else f'{n} is a composite') 
+# program to print all the prime numbers between 1 and 100
+import math
+for i in range(2,101):
+  is_Prime = True
+  for j in range(2,int(math.sqrt(i))+1):
+    if i% j ==0:
+     is_Prime = False
+     break
+  if is_Prime:
+    print(i, end=" ")
