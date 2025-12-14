@@ -247,27 +247,27 @@
 # print(User.is_valid_username("AP")) 
 
 
-class User:
-  total_users= 0
-  def __init__(self,username):
-    if not User.is_valid_username(username):
-      raise ValueError("Invalid Username")
-    self.username = username
-    type(self).total_users+=1
-  @staticmethod
-  def is_valid_username(name):
-    return name.isalpha() and len(name)>=3
-  @classmethod
-  def get_total_users(cls):
-    return cls.total_users
-  def display(self):
-    print(self.username)
+# class User:
+#   total_users= 0
+#   def __init__(self,username):
+#     if not User.is_valid_username(username):
+#       raise ValueError("Invalid Username")
+#     self.username = username
+#     type(self).total_users+=1
+#   @staticmethod
+#   def is_valid_username(name):
+#     return name.isalpha() and len(name)>=3
+#   @classmethod
+#   def get_total_users(cls):
+#     return cls.total_users
+#   def display(self):
+#     print(self.username)
 
 
-u1 =User("Ankit")
-u1.display()
-print(User.get_total_users())
-# u2= User("Ap")
+# u1 =User("Ankit")
+# u1.display()
+# print(User.get_total_users())
+# # u2= User("Ap")
 
 
 
