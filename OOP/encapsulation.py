@@ -73,18 +73,20 @@
 
 # real world example
 
-class User:
-  def __init__(self,age):
-    self.age = age
-  @property
-  def age(self):
-    return self.__age
-  @age.setter
-  def age(self,value):
-    if value<18:
-      raise ValueError("User must be 18+")
-    self.__age = value
+# class User:
+#   def __init__(self,age):
+#     self.age = age
+#   @property
+#   def age(self):
+#     return self.__age
+#   @age.setter
+#   def age(self,value):
+#     if value<18:
+#       raise ValueError("User must be 18+")
+#     self.__age = value
 
 
-u = User(20)
-u.age = 2
+# u = User(20)
+# u.age = 2
+
+
