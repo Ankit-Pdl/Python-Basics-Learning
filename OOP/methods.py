@@ -17,53 +17,57 @@
     
 #   vehicle.deliver(destination)
       
-from abc import ABC, abstractmethod
-# Product Interface
-class Transport(ABC):
-  @abstractmethod
-  def deliver(self)->str:
-    pass
+# from abc import ABC, abstractmethod
+# # Product Interface
+# class Transport(ABC):
+#   @abstractmethod
+#   def deliver(self)->str:
+#     pass
 
-class Truck(Transport):
-  def deliver(self)->str:
-    return "Delivering by road in truck."
+# class Truck(Transport):
+#   def deliver(self)->str:
+#     return "Delivering by road in truck."
 
-class Ship(Transport):
-  def deliver(self)->str:
-    return "Delivering by sea in ship."
+# class Ship(Transport):
+#   def deliver(self)->str:
+#     return "Delivering by sea in ship."
 
-class LogisticsFactory(ABC):
-  @abstractmethod
-  def create_transport(self)->Transport:
-  # The factory method  is abstract; subclass must implement it.
-   pass
-  def plan_delivery(self,destination:str):
-    transport = self.create_transport()
-    return f"Planning shipment to {destination}.\nStatus{transport.deliver()}"
+# class LogisticsFactory(ABC):
+#   @abstractmethod
+#   def create_transport(self)->Transport:
+#   # The factory method  is abstract; subclass must implement it.
+#    pass
+#   def plan_delivery(self,destination:str):
+#     transport = self.create_transport()
+#     return f"Planning shipment to {destination}.\nStatus{transport.deliver()}"
   
-# Concrete Creators
-class RoadLogisticsFactory(LogisticsFactory):
-  def create_transport(self)->Truck:
-    return Truck()
+# # Concrete Creators
+# class RoadLogisticsFactory(LogisticsFactory):
+#   def create_transport(self)->Truck:
+#     return Truck()
   
-class SeaLogisticsFactory(LogisticsFactory):
-    def create_transport(self) -> Ship:
-        # This subclass decides to return a Ship.
-        return Ship()  
+# class SeaLogisticsFactory(LogisticsFactory):
+#     def create_transport(self) -> Ship:
+#         # This subclass decides to return a Ship.
+#         return Ship()  
     
-# Client Code (Usage)
-road_planner = RoadLogisticsFactory()
-print(road_planner.plan_delivery("Paris"))
-# Output:
-# Planning shipment to Paris.
-# Status: Delivering by road in a Truck.
-print("-" * 20)
+# # Client Code (Usage)
+# road_planner = RoadLogisticsFactory()
+# print(road_planner.plan_delivery("Paris"))
+# # Output:
+# # Planning shipment to Paris.
+# # Status: Delivering by road in a Truck.
+# print("-" * 20)
 
-sea_planner = SeaLogisticsFactory()
-print(sea_planner.plan_delivery("Dubai"))
-# Output:
-# Planning shipment to Dubai.
-# Status: Delivering by sea in a Ship.    
+# sea_planner = SeaLogisticsFactory()
+# print(sea_planner.plan_delivery("Dubai"))
+# # Output:
+# # Planning shipment to Dubai.
+# # Status: Delivering by sea in a Ship.    
+
+# # I Will comeback to this shortly, first I need to work with some important OOP concepts
+
+
       
 
 
