@@ -27,3 +27,5 @@ class User:
 u = User(20)
 u.age = 25        # setter called
 print(u.age)      # getter called
+
+
