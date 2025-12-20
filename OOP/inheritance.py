@@ -1,71 +1,111 @@
-# child uses the properties and methods of another class(parent)
+def section(name):
+  print(f"\n=== {name} ===")
 
-# class Parent():
-#   pass
-# class Child(Parent):
-#   pass
+# Single Inheritance
+class Animal:
+  def speak(self):
+    return "generic sound"
 
-# class Animal:
-#   def speak(self):
-#     print("This animal speaks")
+class Dog(Animal):
+  def speak(self):
+    return "woof"
 
-# class Dog(Animal):
-#   pass
+# Multilevel Inheritance
+class Vehicle:
+  def move(self):
+    return "moving"
 
-# c1 = Dog()
-# c1.speak()
+class Car(Vehicle):
+  def move(self):
+    return "car moving"
 
-# constructor with inheritance
+class ElectricCar(Car):
+  def charge(self):
+    return "charging"
 
-# class Person:
-#   def __init__(self,name):
-#     self.name = name
+# Multiple Inheritance
+class Flyer:
+  def fly(self):
+    return "flying"
 
-#   def show(self):
-#     print("Name: ",self.name)
+class Swimmer:
+  def swim(self):
+    return "swimming"
 
-# class Student(Person):
-#   def __init__(self,name,roll):
-#     super().__init__(name)
-#     self.roll = roll
-#   def display(self):
-#         print("Name:", self.name)
-#         print("Roll:", self.roll)      
+class Duck(Flyer, Swimmer):
+  def sound(self):
+    return "quack"
 
-# s = Student("Ankit",31)
-# s.display()
+# Hierarchical Inheritance
+class Shape:
+  def area(self):
+    raise NotImplementedError
 
-# class Parent:
-#    def __init__(self):
-#       print("Parent constructor called")
+class Circle(Shape):
+  def __init__(self, r):
+    self.r = r
+  def area(self):
+    return 3.14159 * self.r * self.r
 
-# class Child(Parent):
-#    def __init__(self):
-#       super().__init__()
-#       print("Child constructor called")
-# c = Child()
+class Rectangle(Shape):
+  def __init__(self, w, h):
+    self.w = w
+    self.h = h
+  def area(self):
+    return self.w * self.h
+
+class Triangle(Shape):
+  def __init__(self, b, h):
+    self.b = b
+    self.h = h
+  def area(self):
+    return 0.5 * self.b * self.h
+
+# Hybrid (Diamond) Inheritance demonstrating MRO
+class A:
+  def who(self):
+    return "A"
+
+class B(A):
+  def who(self):
+    return "B->" + super().who()
+
+class C(A):
+  def who(self):
+    return "C->" + super().who()
+
+class D(B, C):
+  def who(self):
+    return "D->" + super().who()
 
 
-# types of inheritance
+def main():
+  section("Single Inheritance")
+  d = Dog()
+  print("Dog speaks:", d.speak())
+  print("Dog is Animal:", isinstance(d, Animal))
 
-# single inheritance
+  section("Multilevel Inheritance")
+  e = ElectricCar()
+  print("ElectricCar move:", e.move())
+  print("ElectricCar:", e.charge())
 
-# class A:
-#   pass
-# class B(A):
-#   pass
+  section("Multiple Inheritance")
+  duck = Duck()
+  print("Duck fly:", duck.fly())
+  print("Duck swim:", duck.swim())
+  print("Duck sound:", duck.sound())
+
+  section("Hierarchical Inheritance")
+  shapes = [Circle(3), Rectangle(4, 5), Triangle(6, 2)]
+  for s in shapes:
+    print(type(s).__name__, "area:", s.area())
+
+  section("Hybrid (Diamond) Inheritance")
+  obj = D()
+  print("D who:", obj.who())
+  print("D MRO:", [cls.__name__ for cls in D.mro()])
 
 
-# multilevel
-
-class Grandparent:
-  def __init__(self):
-    self.family_name = "Poudel"
-
-class Parent(Grandparent):
-  pass
-class Child(Parent):
-  pass
-
-c = Child()
-print(c.family_name)
+if __name__ == "__main__":
+  main()
