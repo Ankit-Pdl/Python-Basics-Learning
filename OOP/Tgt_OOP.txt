@@ -1,0 +1,62 @@
+PYTHON OOP – COMPLETE CONCEPT LIST
+
+1. Class and Object
+2. Instance Variables
+3. Class Variables
+4. __init__() Constructor
+5. self keyword
+
+OOP PILLARS
+6. Encapsulation
+7. Access Modifiers (public, _protected, __private)
+8. Property, Getter and Setter (@property)
+9. Inheritance
+10. Method Overriding
+11. super()
+12. Polymorphism
+13. Duck Typing
+14. Abstraction
+15. Abstract Base Classes (abc, @abstractmethod)
+
+PYTHON-SPECIFIC OOP
+16. Class Methods (@classmethod)
+17. Static Methods (@staticmethod)
+18. Factory Methods
+19. Magic / Dunder Methods
+20. __str__ and __repr__
+21. Operator Overloading
+22. __call__
+23. __len__, __eq__, __lt__, etc.
+
+DESIGN & STRUCTURE
+24. Composition (HAS-A)
+25. Inheritance vs Composition
+26. Multiple Inheritance
+27. Method Resolution Order (MRO)
+28. Mixins
+29. Data Classes (@dataclass)
+
+ADVANCED OOP
+30. SOLID Principles
+31. Dependency Injection
+32. Design Patterns (Factory, Strategy, Observer, Decorator)
+33. Type Hinting
+34. Protocols (typing.Protocol)
+35. Custom Exceptions
+36. Exception Hierarchy
+37. Object Lifecycle
+38. __del__()
+39. Shallow Copy vs Deep Copy
+40. Garbage Collection
+
+PROFESSIONAL PRACTICES
+41. Clean Class Design
+42. Reusable and Testable Classes
+43. Separation of Concerns
+44. Writing OOP for Real Projects
+  
+
+
+  # things I got through in between:
+  Open/Closed Principles
+  
